@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: DEBUG
+
+spring:
+  jackson:
+    mapper:
+      accept_case_insensitive_properties: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/markhakansson
+    username: markhakansson
+    password: insecurepassword
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+
+  sql:
+    init:
+      mode: never

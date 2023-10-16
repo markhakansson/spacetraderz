@@ -1,0 +1,29 @@
+version: "3"
+services:
+  # Rename this later when we have a clear definition of responsibility
+  # mongo:
+  #   image: "mongo:6.0"
+  #   environment:
+  #     MONGO_INITDB_DATABASE: spacetraderz
+  #   ports:
+  #     - "27017:27017"
+
+  # Rename this later when we have a clear definition of responsibility
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: markhakansson
+      # TODO do not use plaintext passwords
+      POSTGRES_PASSWORD: insecurepassword
+    ports:
+      - '5432:5432'
+
+  # app:
+  #   image: spacetraderz-app:1.0-SNAPSHOT
+  #   depends_on:
+  #     - mongo
+  #     - postgres
+  #   environment:
+  #     - "SPRING_PROFILES_ACTIVE=docker"
+  #   ports:
+  #     - "8080:8080"
